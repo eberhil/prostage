@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProstageController extends AbstractController
 {
     /**
-     * @Route("/", name="prostage_acceuil")
+     * @Route("/", name="prostage_accueil")
      */
     public function index(): Response
     {
@@ -23,7 +23,7 @@ class ProstageController extends AbstractController
      */
     public function entreprises(): Response
     {
-        return $this->render('prostage/index.html.twig', [
+        return $this->render('prostage/entreprises.html.twig', [
             'controller_name' => 'ProstageController',
         ]);
     }
@@ -33,18 +33,18 @@ class ProstageController extends AbstractController
      */
     public function formations(): Response
     {
-        return $this->render('prostage/index.html.twig', [
+        return $this->render('prostage/formations.html.twig', [
             'controller_name' => 'ProstageController',
         ]);
     }
 
     /**
-     * @Route("/stages/{id}", name="stages")
+     * @Route("/stages/{id}", name="stages-id")
      */
-    public function stage(): Response
+    public function stage($id): Response
     {
-        return $this->render('prostage/index.html.twig', [
-            'controller_name' => 'ProstageController',
+        return $this->render('prostage/stage-id.html.twig', [
+            'controller_name' => 'ProstageController', 'id'=>$id,
         ]);
     }
     
